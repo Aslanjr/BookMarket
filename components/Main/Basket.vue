@@ -3,7 +3,7 @@
         <div class="Basket__item d-flex align-items-end" @mouseenter="DropdownBasket = true">
             <span class="BasketCount">1</span>
             <img src="/Icons/add-to-cart.png" alt="">
-            <span class="totalPrice ml-2">{{totalBasketPrice}}$15.00</span>
+            <span class="totalPrice ml-2">$15.00</span>
             <transition name="switch">
                 <div class="DropdownBasket shadow-lg" @mouseenter="DropdownBasket = true" @mouseleave=" DropdownBasket = false" v-if="DropdownBasket">
                     <div class="non__Content" v-if="ItemBasket">
@@ -116,8 +116,8 @@ export default {
             padding: 2% 5% 2% 2%;
             position:absolute;
             cursor: pointer;
-            top:15%;
-            right:15%;
+            top:83%;
+            right:10%;
             font-size: 18px;
             .non__Content{
                 animation:Anime 1s ease;
@@ -133,8 +133,8 @@ export default {
             display: flex;
             position:absolute;
             cursor: pointer;
-            top:15%;
-            right:10%;
+            top:83%;
+            right:8%;
             font-size: 18px;
             color:#fff;
             input{
