@@ -1,47 +1,46 @@
 <template>
-    <div class="slider container-fluid">
+    <div class=" container-fluid">
         <div class="row d-flex">
-            <div class="slider__content">
-                <img src="https://chapterone.qodeinteractive.com/wp-content/uploads/2019/07/home-2-revolution-img-3.png" alt="">
-            </div>
-            <div class="slider__content">
-                <img src="https://chapterone.qodeinteractive.com/wp-content/uploads/2019/08/home-2-slide-3-image-1b.jpg" alt="">
-            </div>
-            <div class="slider__content col-sm-6 col-md-6" v-show="true" >
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 slider__content-title text-left">
-                            <h6 class="font-weight-bolder text-secondary slider__title pl-1">{{title | upper}}</h6>
-                        </div>   
-                        <div class="col-sm-12 slider__content-title text-left">
-                            <h1 class="slider__text">
-                                The all-time classics
-                            </h1>
+            <div class="slider">
+                <div class="slider__content">
+                    <img src="https://chapterone.qodeinteractive.com/wp-content/uploads/2019/07/home-2-revolution-img-3.png" alt="">
+                </div>
+                <div class="slider__content">
+                    <img src="https://chapterone.qodeinteractive.com/wp-content/uploads/2019/08/home-2-slide-3-image-1b.jpg" alt="">
+                </div>
+                <div class="slider__content col-sm-6 col-md-6" v-show="true" >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 slider__content-title text-left">
+                                <h6 class="font-weight-bolder text-secondary slider__title pl-1">{{title | upper}}</h6>
+                            </div>   
+                            <div class="col-sm-12 slider__content-title text-left">
+                                <h1 class="slider__text">
+                                    The all-time classics
+                                </h1>
+                            </div>
+                            <div class="col-sm-12  slider__content-title text-left">
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit <br>  saepe fugiat aliquid placeat   consequatur,
+                                    minima
+                                </p>
+                            </div>
+                            <div class="col-sm-12  slider__content-title text-start">
+                                <button class="btn btn-danger btn-lg button">Read More</button>
+                            </div>
                         </div>
-                        <div class="col-sm-12  slider__content-title text-left">
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit <br>  saepe fugiat aliquid placeat   consequatur,
-                                 minima
-                            </p>
+                    </div>   
+                </div> 
+                <div class="container-fluid slider__controls">
+                    <div class="row  d-flex justify-content-between">
+                        <div class="slider__controls__Back">
+                            <img src="/icons/white-arrow.png" @click="prev" height="64" alt="">
                         </div>
-                        <div class="col-sm-12  slider__content-title text-start">
-                            <button class="btn btn-danger btn-lg button">Read More</button>
+                        <div class="slider__controls__Next">
+                            <img src="/icons/white-arrow.png" @click="next" height="64" alt="">
                         </div>
                     </div>
-                </div>   
-            </div> 
-            <div class="slider__controls">
-                <div class="slider__controls__Back">
-                    <img src="/Icons/white-arrow.png" @click="next" height="64" alt="">
                 </div>
-                <div class="slider__controls__Next">
-                    <img src="/icons/white-arrow.png" @click="prev" height="64" alt="">
-                </div>
-            </div>
-            <div class="slider__progress d-flex">
-                <div class="Slider__progress__items"></div>
-                <div class="Slider__progress__items"></div>
-                <div class="Slider__progress__items"></div>
             </div>
         </div>
     </div>
@@ -72,35 +71,36 @@ export default {
 <style lang="scss" scoped>
     .slider{
         font-family: 'Cormorant Garamond', serif;
-        max-width:1765px;
         height:100%;
-        padding:4% 0%;
-        max-height: 650px;
+        width:100%;
+        padding:15% 0%;
         overflow: hidden;
+        max-height: 700px;
+        min-height: 650px;
         z-index: 20;
-        position: absolute;
-        left: 4%;
+        margin:0% 5%;
+        position: relative;
         background:#282828;
         // #D9D0C1
     }
     .slider__content:nth-child(1){
-        margin:5% 12%;
         position: absolute;
-        right:800px;
+        top:25%;
+        left:35%;
         z-index: 120;
         animation:Anime3 2s ease;
     }
     .slider__content:nth-child(2){
-        margin:0% 13%;
         position: absolute;
-        right:800px;
+        top:15%;
+        left:8%;
         animation:Anime3 2s ease;
     }
     .slider__content:nth-child(3){
         font-size: 23px;
-        margin:5% 13%;
         position: absolute;
-        left:33%;
+        top:30%;
+        left:50%;
         color:#fff;
         z-index:100;
         .slider__text{
@@ -112,48 +112,21 @@ export default {
         }
     }
     .slider__controls{
+        margin:0;
         position: absolute;
-        z-index:100;
-        left:10%;
         top:50%;
+        z-index:120;
         .slider__controls__Back{
-            position: absolute;
-            animation:Anime1 1s ease ;
-            left:1450px;
-            top:-20px;
+            transition: all .65s ease;
+            transform:rotate(180deg);
             cursor: pointer;
         }
         .slider__controls__Next{
-            position: absolute;
-            right:50px;
-            transform: rotate(180deg);
-            top:-20px;
+            transition: all .65s ease;
             cursor: pointer;
         }
-        
     }
-    .slider__progress{
-        z-index: 101;
-        position:absolute;
-        left:43%;
-        top:90%;
-        .Slider__progress__items{
-            margin:0% 1%;
-            height: 10px;
-            width:40px;
-            background:rgb(85,85,85);
-            border-radius: 13px;
-            transition:all .65s ease;
-        }
-        .Slider__progress__items:nth-child(2){
-            margin:0% 1%;
-            height: 10px;
-            width:80px;
-            background:#FFFFFF;
-            border-radius: 13px;
-            transition:all .65s ease;
-        }
-    }
+    
     .slider__content-title:nth-child(1){
         animation:Anime1 .6s ease;
     }

@@ -1,27 +1,40 @@
 <template>
     <div class="Basket d-flex">
-        <div class="Basket__item d-flex align-items-end" @mouseenter="DropdownBasket = true">
-            <span class="BasketCount">1</span>
+        <div class="Basket__item d-flex align-items-end" @mouseenter="showBasketItems">
+            <span class="BasketCount">{{$store.state.Basket.cartCount}}</span>
             <img src="/Icons/add-to-cart.png" alt="">
-            <span class="totalPrice ml-2">$15.00</span>
+            <span class="totalPrice ml-2">${{$store.state.Basket.totalPrice}}.00</span>
             <transition name="switch">
-                <div class="DropdownBasket shadow-lg" @mouseenter="DropdownBasket = true" @mouseleave=" DropdownBasket = false" v-if="DropdownBasket">
+                <div class="DropdownBasket shadow-lg" @mouseenter="showBasketItems" @mouseleave=" DropdownBasket = false" v-if="DropdownBasket">
                     <div class="non__Content" v-if="ItemBasket">
                         No products in the cart.
                     </div>
-                    <div class="Basket__Content" v-if="BasketContent">
-                        <div class="Basket__Content__items" v-for="(item,index) in showBasket" :key="index">
-                            <img :src="item.Img" />
-                            <span>{{item.Title}}</span>
-                            <span>{{item.Amount}}</span>
+                    <div class="Basket__Content p-5" v-if="BasketContent">
+                        <div class="d-flex row mb-3 no-gutters align-items-center" v-for="(item,index) in showBasket" :key="index">
+                            <div class="col-sm-4 ">
+                                <img :src="item.Img" height="110"/>
+                            </div>
+                            <div class="col-sm-4 ml-1">
+                                <p class="m-0">{{item.Title}}</p>
+                                <p>1 x {{item.Amount | Dollars}}</p>
+                            </div>
+                            <div class="col-sm-3 mb-5 text-right">
+                                <img src="/icons/close.png" @click="deleteItem(item)" class="close">
+                            </div>
                         </div>
+                    <div class="d-flex justify-content-between">
+                        <p >Total:</p>
+                        <p>${{$store.state.Basket.totalPrice}}.00</p>
+                    </div>
+                    <button class="button buttonCart">View Cart</button>
+                    <button class="button buttonCheck">View Checkout</button>
                     </div>
                 </div>
             </transition>
         </div>
         <div class="Basket__item">
            <div>
-               <img src="/Icons/search.png" @click=" DropdownSearch = true" alt="">
+               <img src="/Icons/search.png" @click=" DropdownSearch = true">
            </div>
            <transition name="switch">
                 <div class="DropdownSearch" v-if="DropdownSearch" @mouseleave="DropdownSearch = false">
@@ -44,34 +57,46 @@ export default {
     name:'Basket',
     data:()=>{
         return{
-            DropdownBasket:false,
-            ItemBasket:true,
+            DropdownBasket:true,
+            ItemBasket:false,
             BasketContent:false,
             DropdownSearch:false,
             search:'',
         }
     },
+    filters:{
+        Dollars(value){
+            return '$' + value + '.00';
+        },
+    },
     computed: {
         showBasket(){
             return this.$store.state.Basket.AllBasket;
         },
-        // checkBasket(){
-        //     if(this.showBasket.length > 0){
-        //         return this.ItemBasket = true;
-        //     }else{
-        //         return this.BasketContent = true;
-        //     }
-        // }
-        // totalBasketPrice(){
-        //     let TotalPrice = this.showBasket.reduce((sum,current)=>{
-        //         return sum + current.Amount;
-        //     });
-        //     return TotalPrice;
-        // },
+        totalBasketPrice(){
+            let TotalPrice = this.showBasket.reduce((sum,current)=>{
+                return sum + current.Amount;
+            });
+            return TotalPrice;
+        },
     },
     methods:{
         Search(){
             console.log('Search');
+        },
+        showBasketItems(){
+            this.DropdownBasket = true;
+            if(this.showBasket.length == 0){
+                 this.ItemBasket = true;
+                 this.BasketContent = false;
+            }else{
+                this.ItemBasket = false;
+                this.BasketContent = true;
+            }
+            
+        },
+        deleteItem(item){
+            this.$store.dispatch('Basket/removeBasket',item);
         }
     }  
 
@@ -113,16 +138,21 @@ export default {
         }
         .DropdownBasket{
             background:#fff;
-            padding: 2% 5% 2% 2%;
+            width: 400px;
             position:absolute;
             cursor: pointer;
             top:83%;
             right:10%;
             font-size: 18px;
             .non__Content{
+                width: 100%;
+                height:100%;
+                padding:30px 50px;
                 animation:Anime 1s ease;
             }
             .Basket__Content{
+                width: 100%;
+                height:100%;
                 animation:Anime 1s ease;
             }
         }
@@ -166,13 +196,43 @@ export default {
         }
     }
     .switch-enter-active, .switch-leave-active{
-		max-height: 300px;
-		transition: all 1s ease;
+		max-height: 1000px;
+		transition: all .4s ease;
 	}
 	.switch-enter, .switch-leave-to {
 		opacity: 0;
   		max-height: 0px;
 	}
+    .close{
+        transition:all .35s ease;
+    }
+    .close:hover{
+        transform:rotate(90deg)
+    }
+    .button{
+        width:100%;
+        margin:5px 0px;
+        padding: 10px 0px;
+        border:none;
+    }
+    .buttonCart{
+        background:#fff;
+        color:black;
+        outline: 1px solid rgb(156, 156, 156);
+    }
+    .buttonCart:hover{
+        background:#000;
+        color:#fff;
+    }
+    .buttonCheck{
+        background: #D14031;
+        color:#fff;
+    }
+    .buttonCheck:hover{
+        background: rgb(136, 23, 10);
+        color:#fff;
+    }
+
     @keyframes Anime {
 			0%{
 				opacity: 0;
@@ -183,4 +243,5 @@ export default {
 			}
 
 		}
+    
 </style>

@@ -1,25 +1,27 @@
 <template>
     <div class="AllBooks container-fluid">
-        <div class="AllBooks__item" v-for="(item,index) in showBooks.slice(0,10)" :key="index">
-            <div class="AllBooks__item__content" >
-                <div class="Images">
-                    <img class="AllBooks__item__images" :src="item.Img"  alt="">
-                </div>
-                <div class="Title__content">
-                    <div class="link">
-                        <div class="addToBasket">
-                            <span>Add To Basket</span>
-                            <span class="line"></span>
+        <div class="row d-flex ml-5 justify-content-end">
+            <div class="AllBooks__item" v-for="(item,index) in showBooks.slice(0,10)" :key="index">
+                <div class="AllBooks__item__content" >
+                    <div class="Images">
+                        <img class="AllBooks__item__images" :src="item.Img"  alt="">
+                    </div>
+                    <div class="Title__content">
+                        <div class="link">
+                            <div class="addToBasket">
+                                <span @click="addToBasket(item)">Add To Basket</span>
+                                <span class="line"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="mt-4">
-                <p class="Author">{{item.Author}}</p>
-                <p class="Title">{{item.Title}}</p>
-                <p class="Amount">${{item.Amount}}.00</p>
-            </div>
-        </div>  
+                <div class="mt-4">
+                    <p class="Author">{{item.Author}}</p>
+                    <p class="Title">{{item.Title}}</p>
+                    <p class="Amount">${{item.Amount}}.00</p>
+                </div>
+            </div> 
+        </div> 
     </div>
 </template>
 <script>
@@ -33,8 +35,15 @@ export default {
     computed: {
         showBooks(){
             return this.$store.state.Books.AllBooks;
+        },
+        
+    },
+    methods: {
+        addToBasket(item){
+            this.$store.dispatch('Basket/addBasket',item);
         }
     },
+
 }
 </script>
 <style lang="scss" scoped>
@@ -76,6 +85,15 @@ export default {
         .Amount{
             font-size: 20px;
             color:rgb(110,110,110)
+        }
+        @media screen and (max-width: 1840px) {
+            flex-basis: 25%;
+        }
+        @media screen and (max-width: 1430px) {
+            flex-basis: 33%;
+        }
+        @media screen and (max-width: 1050px) {
+            flex-basis: 50%;
         }
         
     }

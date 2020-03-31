@@ -4,6 +4,11 @@
             <first-slide v-show="firstSlide" />
             <second-slide v-show="secondSlide" />
             <third-slide v-show="thirdSlide" />
+            <div class="slider__progress d-flex">
+                <div :class="[  firstSlide  ? active : disables]" @click="showSlides(1)"></div>
+                <div :class="[  secondSlide ? active : disables]" @click="showSlides(2)"></div>
+                <div :class="[  thirdSlide  ? active : disables]" @click="showSlides(3)"></div>
+            </div>  
        </div>
     </div>
 </template>
@@ -19,7 +24,9 @@ export default {
         return{
             firstSlide:true,
             secondSlide:false,
-            thirdSlide:false
+            thirdSlide:false,
+            active:'active',
+            disables:'Slider__progress__items'
         }
     },
     mounted() {
@@ -43,7 +50,27 @@ export default {
         })
     },
     methods: {
-        
+        showSlides(id){
+            switch(id){
+                case 1 :
+                    this.firstSlide = true;
+                    this.secondSlide = false;
+                    this.thirdSlide = false;
+                    break;
+                case 2:
+                    this.firstSlide = false;
+                    this.secondSlide = true;
+                    this.thirdSlide = false;
+                    break;
+                case 3:
+                    this.firstSlide = false;
+                    this.secondSlide = false;
+                    this.thirdSlide = true;
+                    break;
+                default:
+                    console.log('Error');
+                }
+        }
     },
     components:{
         firstSlide,
@@ -53,5 +80,33 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    
+    .slider__progress{
+        z-index: 101;
+        position:absolute;
+        left:45%;
+        top:75%;
+        
+    }
+    .Slider__progress__items{
+        margin:0% 1%;
+        height: 10px;
+        width:40px;
+        background:rgb(178,178,178);
+        border-radius: 13px;
+        transition:all 1s ease;
+        cursor: pointer;
+    }
+    .Slider__progress__items:hover{
+        width:80px;
+        background:#000;
+    }
+    .active{
+        cursor: pointer;
+        margin:0% 1%;
+        height: 10px;
+        width:80px;
+        background:#000;
+        border-radius: 13px;
+        transition:all .65s ease;
+    }
 </style>
