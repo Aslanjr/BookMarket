@@ -276,34 +276,36 @@ import Basket from './Basket.vue'
 			font-family:"Josefin Sans", sans-serif;
 			font-size: 11px;
 			letter-spacing: .35em;
+			z-index: 140;
+			position: relative;
 			line-height: 18px;
 			.Dropdown__item__home{
 				background:#fff;
 				padding: 2% 4% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:200px;
+				left:1%;
 			}
 			.Dropdown__item__pages{
 				background:#fff;
 				padding: 2% 4% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:300px;
+				left:5%;
 			}
 			.Dropdown__item__events{
 				background:#fff;
 				padding: 2% 5% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:400px;
+				left:7%;
 			}
 			.Dropdown__item__Blog{
 				background:#fff;
 				padding: 2% 1% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:450px;
+				left:10%;
 				.drop_item{
 					.rightArrow{
 						padding-left:60px;
@@ -319,7 +321,7 @@ import Basket from './Basket.vue'
 				padding: 2% 4% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:500px;
+				left:30%;
 			}
 			.Dropdown__item__BlogSingle{
 				background:#fff;

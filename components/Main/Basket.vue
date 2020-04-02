@@ -42,10 +42,27 @@
                 </div>
            </transition>
         </div>
-        <div class="Basket__item">
+        <div class="Basket__item" @mouseenter="LogIn = true">
             <div>
-               <img src="/Icons/open-menu.png" alt="">
+               <img src="/Icons/user.png" alt="">
            </div>
+           <transition name="switch">
+            <div class="Log row d-flex flex-wrap  shadow-lg justify-content-center" @mouseenter="LogIn = true" @mouseleave="LogIn = false" v-if="LogIn">   
+                    <div class="Login col-sm-12 ">
+                        <img src="/Icons/login.png" alt="">
+                        <nuxt-link to="/Auth/Login">
+                            <span>Log In</span>
+                        </nuxt-link>
+                    </div>
+                
+                    <div class="Sign col-sm-12">
+                        <img src="/Icons/login.png" alt="">
+                         <nuxt-link to="/Auth/Registration">
+                            <span>Sign In</span>
+                         </nuxt-link>
+                    </div>
+            </div>
+           </transition>
         </div>
     </div>
 </template>
@@ -57,6 +74,7 @@ export default {
     name:'Basket',
     data:()=>{
         return{
+            LogIn:false,
             DropdownBasket:true,
             ItemBasket:false,
             BasketContent:false,
@@ -106,10 +124,37 @@ export default {
     .Basket{
         font-family: 'Cormorant Garamond', serif;
         padding:0% 30%;
+        z-index: 140;
         .Basket__item{
             cursor: pointer;
             margin: 0% 7%;
             padding:0% 10% 0% 0%;
+            .Log{
+                position: absolute;
+                top:80%;
+                left:85%;
+                background:#fff;
+                padding: 30px 0px;
+                font-size: 20px;
+                a{
+                    color: #000;
+                    text-decoration: none;
+                }
+                .Login{
+                    transition: all .5s ease;
+                }
+                .Sign{
+                    transition: all .5s ease;
+                    margin:10px 0px;
+                }
+                .Sign:hover{
+                    transform: translateX(5px);
+                }
+                .Login:hover{
+                    transform: translateX(5px);
+                }
+            }
+            
             .BasketCount{
                 display: block;
                 position: relative;

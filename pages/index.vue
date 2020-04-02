@@ -3,7 +3,7 @@
     <Header class="Header" /> 
     <!-- <add-book v-if="show" /> -->
     <slider class="Slider" />
-    <books class="Books" v-show="false" />
+    <books class="Books" />
     <OurService />
     <Authors/>
     <GuestHost/>
@@ -62,6 +62,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  .Main{
+    overflow:hidden;
+  }
   .Header{
     position:relative;
     z-index: 999;
