@@ -18,19 +18,19 @@
 
 <script>
 
-import Header from '~/components/Main/header.vue'
+import Header from '../components/Main/header'
 // import addBook from '~/components/Main/addBook.vue'
-import slider from '~/components/Main/Slider.vue'
-import books from '~/components/Main/Books/Books.vue'
-import OurService from '~/components/Main/OurService.vue'
-import Authors from '~/components/Main/Authors.vue'
-import GuestHost from '~/components/Main/Autobiography/GuestHost.vue'
-import Travelogue from '~/components/Main/Autobiography/Travelogue.vue'
-import Gallery from '~/components/Main/gallery.vue'
-import BookPromotion from '~/components/Main/Events/BookPromotion.vue'
-import ClientsLinks from '~/components/Main/ClientsLinks.vue'
-import MyLink from '~/components/Main/MyLink.vue'
-import Footer from '~/components/Main/footer.vue'
+import slider from '../components/Main/Slider'
+import books from '../components/Main/Books/Books'
+import OurService from '../components/Main/OurService'
+import Authors from '../components/Main/Authors'
+import GuestHost from '../components/Main/Autobiography/Guesthost'
+import Travelogue from '../components/Main/Autobiography/Travelogue'
+import Gallery from '../components/Main/gallery'
+import BookPromotion from '../components/Main/Events/BookPromotion'
+import ClientsLinks from '../components/Main/ClientsLinks'
+import MyLink from '../components/Main/MyLink'
+import Footer from '../components/Main/footer'
 
 export default {
   name:'Main',

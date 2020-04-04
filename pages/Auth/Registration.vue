@@ -8,11 +8,11 @@
     </div>
 </template>
 <script>
-import Header from '~/components/Main/header'
-import Registration from '~/components/Main/Auth/Registration'
-import Footer from '~/components/Main/footer'
-import MyLink from '~/components/Main/MyLink'
-import CLientLinks from '~/components/Main/ClientsLinks'
+import Header       from '../../components/Main/header'
+import Registration from '../../components/Main/Auth/Registration'
+import Footer       from '../../components/Main/footer'
+import MyLink       from '../../components/Main/MyLink'
+import CLientLinks  from '../../components/Main/ClientsLinks'
 
 export default {
     name:'Log',

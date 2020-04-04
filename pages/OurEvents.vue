@@ -12,14 +12,14 @@
 </template>
 <script>
 
-import Headers      from '~/components/Main/header.vue'
-import Footer       from '~/components/Main/footer.vue'
-import Events       from '~/components/Main/Events/BookPromotion.vue'
-import ClientLinks  from '~/components/Main/ClientsLinks.vue'
-import MyLinks      from '~/components/Main/MyLink.vue'
-import OurEvent     from '~/components/Main/Events/OurEvent.vue'
-import ParisTour    from '~/components/Main/Events/ParisTour.vue'
-import BooksClub    from '~/components/Main/Books/BooksClub.vue'
+import Headers      from '../components/Main/header'
+import Footer       from '../components/Main/footer'
+import Events       from '../components/Main/Events/BookPromotion'
+import ClientLinks  from '../components/Main/ClientsLinks'
+import MyLinks      from '../components/Main/MyLink'
+import OurEvent     from '../components/Main/Events/OurEvent'
+import ParisTour    from '../components/Main/Events/ParisTour'
+import BooksClub    from '../components/Main/Books/BooksClub'
 
 
 export default {
