@@ -47,17 +47,8 @@
                <img src="/Icons/user.png" alt="">
            </div>
            <transition name="switch">
-            
-            <div class="Log row d-flex flex-wrap  shadow-lg justify-content-center" @mouseenter="LogIn = true" @mouseleave="LogIn = false" v-if="$auth.loggedIn">   
-                    <div class="Login col-sm-12 ">
-                        <img src="/Icons/login.png" alt="">
-                        <nuxt-link to="/Auth/Login">
-                            <span>My Profile</span>
-                            <span>{{$auth.user.email}}</span>
-                        </nuxt-link>
-                    </div>
-            </div>
-            <div class="Log row d-flex flex-wrap  shadow-lg justify-content-center" @mouseenter="LogIn = true" @mouseleave="LogIn = false" v-else-if="LogIn">   
+        
+            <div class="Log row d-flex flex-wrap  shadow-lg justify-content-center" @mouseenter="LogIn = true" @mouseleave="LogIn = false" v-if="LogIn">   
                     <div class="Login col-sm-12 ">
                         <img src="/Icons/login.png" alt="">
                         <nuxt-link to="/Auth/Login">
