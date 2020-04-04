@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'FlowerMarket',
+    title: 'BooksMarket',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -26,6 +26,11 @@ module.exports = {
   /*
   ** Build configuration
   */
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
+  ],
+
   build: {
     /*
     ** Run ESLint on save
@@ -41,6 +46,20 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  // auth: {
+  //   strategies: {
+  //     local: {
+  //       endpoints: {
+  //         login: { url: '/sessions', method: 'post', propertyName: 'token' },
+  //         logout: { url: '/api/auth/logout', method: 'post' },
+  //         user: { url: '/sessions/user', method: 'get', propertyName: 'user' }
+  //       },
+  //       // tokenRequired: true,
+  //       // tokenType: 'bearer'
+  //       // autoFetchUser: true
+  //     }
+  //   }
+  // }
 }
 

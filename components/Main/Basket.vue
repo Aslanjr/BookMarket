@@ -19,7 +19,7 @@
                                 <p>1 x {{item.Amount | Dollars}}</p>
                             </div>
                             <div class="col-sm-3 mb-5 text-right">
-                                <img src="/icons/close.png" @click="deleteItem(item)" class="close">
+                                <img src="https://image.flaticon.com/icons/svg/748/748122.svg" height="16" @click="deleteItem(item)" class="close">
                             </div>
                         </div>
                     <div class="d-flex justify-content-between">
@@ -42,12 +42,22 @@
                 </div>
            </transition>
         </div>
-        <div class="Basket__item" @mouseenter="LogIn = true">
+        <div class="Basket__item" @mouseenter="LogIn = true" >
             <div>
                <img src="/Icons/user.png" alt="">
            </div>
            <transition name="switch">
-            <div class="Log row d-flex flex-wrap  shadow-lg justify-content-center" @mouseenter="LogIn = true" @mouseleave="LogIn = false" v-if="LogIn">   
+            
+            <div class="Log row d-flex flex-wrap  shadow-lg justify-content-center" @mouseenter="LogIn = true" @mouseleave="LogIn = false" v-if="$auth.loggedIn">   
+                    <div class="Login col-sm-12 ">
+                        <img src="/Icons/login.png" alt="">
+                        <nuxt-link to="/Auth/Login">
+                            <span>My Profile</span>
+                            <span>{{$auth.user.email}}</span>
+                        </nuxt-link>
+                    </div>
+            </div>
+            <div class="Log row d-flex flex-wrap  shadow-lg justify-content-center" @mouseenter="LogIn = true" @mouseleave="LogIn = false" v-else-if="LogIn">   
                     <div class="Login col-sm-12 ">
                         <img src="/Icons/login.png" alt="">
                         <nuxt-link to="/Auth/Login">
@@ -131,8 +141,8 @@ export default {
             padding:0% 10% 0% 0%;
             .Log{
                 position: absolute;
-                top:80%;
-                left:85%;
+                top:120px;
+                left:87%;
                 background:#fff;
                 padding: 30px 0px;
                 font-size: 20px;
@@ -184,9 +194,9 @@ export default {
         .DropdownBasket{
             background:#fff;
             width: 400px;
-            position:absolute;
+            position: absolute;
             cursor: pointer;
-            top:83%;
+            top:100px;
             right:10%;
             font-size: 18px;
             .non__Content{
@@ -208,7 +218,7 @@ export default {
             display: flex;
             position:absolute;
             cursor: pointer;
-            top:83%;
+            top:100px;
             right:8%;
             font-size: 18px;
             color:#fff;

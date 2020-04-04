@@ -2,7 +2,6 @@
     <div class="Log">
         <Header/>
         <Login/>
-        <Registration/>
         <CLientLinks/>
         <Footer/>
         <MyLink/>
@@ -11,7 +10,6 @@
 <script>
 import Header from '~/components/Main/header'
 import Login from '~/components/Main/Auth/Login'
-import Registration from '~/components/Main/Auth/Registration'
 import Footer from '~/components/Main/footer'
 import MyLink from '~/components/Main/MyLink'
 import CLientLinks from '~/components/Main/ClientsLinks'
@@ -26,7 +24,6 @@ export default {
     components:{
         Header,
         Login,
-        Registration,
         Footer,
         MyLink,
         CLientLinks

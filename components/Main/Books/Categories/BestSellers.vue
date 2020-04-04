@@ -9,7 +9,7 @@
                     <div class="Title__content">
                         <div class="link">
                             <div class="addToBasket">
-                                <span>Add To Basket</span>
+                                <span @click="addToBasket(item)">Add To Basket</span>
                                 <span class="line"></span>
                             </div>
                         </div>
@@ -35,6 +35,11 @@ export default {
     computed: {
         showBooks(){
             return this.$store.state.Books.AllBooks;
+        }
+    },
+    methods: {
+        addToBasket(item){
+            this.$store.dispatch('Basket/addBasket',item);
         }
     },
 

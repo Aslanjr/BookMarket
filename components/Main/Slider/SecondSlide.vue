@@ -34,10 +34,10 @@
                 <div class="container-fluid slider__controls">
                     <div class="row  d-flex justify-content-between">
                         <div class="slider__controls__Back">
-                            <img src="/icons/white-arrow.png" @click="prev" height="64" alt="">
+                            <img src="https://image.flaticon.com/icons/svg/482/482630.svg" @click="prev" height="64" alt="">
                         </div>
                         <div class="slider__controls__Next">
-                            <img src="/icons/white-arrow.png" @click="next" height="64" alt="">
+                            <img src="https://image.flaticon.com/icons/svg/482/482630.svg" @click="next" height="64" alt="">
                         </div>
                     </div>
                 </div>
@@ -118,11 +118,12 @@ export default {
         z-index:120;
         .slider__controls__Back{
             transition: all .65s ease;
-            transform:rotate(180deg);
+            
             cursor: pointer;
         }
         .slider__controls__Next{
             transition: all .65s ease;
+            transform:rotate(180deg);
             cursor: pointer;
         }
     }

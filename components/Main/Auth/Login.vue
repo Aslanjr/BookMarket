@@ -19,10 +19,7 @@
                     </div>
                     <div class="form-row mt-2 d-flex align-items-center">
                         <div class="form-group col-sm-5">
-                            <button class="Button mr-2" @click="Login">Log In</button>
-                            <nuxt-link to="/Auth/Registration ">
-                                <span class="font-weight-bold">Create Account</span>  
-                            </nuxt-link>
+                            <button class="Button" @click="Login">Log In</button>
                         </div>
                     </div>
                 </form>
@@ -35,7 +32,7 @@ export default {
     name:'Login',
     data:()=>{
         return{
-            Login:{
+            User:{
                 Login:'',
                 password:'',
             }
@@ -43,12 +40,17 @@ export default {
     },
     methods: {
         LogIn(){
-
+            this.$auth.loginWith('local',{
+                data:{
+                    username:this.User.Login,
+                    userpassword:this.User.password
+                }
+            })
         }
     },
     computed: {
         showLogin(){
-            return this.Login;
+            return this.User;
         },
     },
 }

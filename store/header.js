@@ -33,11 +33,11 @@ export const state = () => ({
   PagesDropDown:[
     {
         title:'About me',
-        route:'/AboutMe'
+        route:'/About/AboutMe'
     },
     {
         title:'About Us',
-        route:'/AboutUs'
+        route:'/About/AboutUs'
     },
     {
         title:'Our Events',
@@ -97,7 +97,7 @@ export const state = () => ({
     },
     {
         title:'Blog Singles',
-        img:'/Icons/down-arrow.png',
+        img:'https://www.flaticon.com/premium-icon/icons/svg/633/633317.svg',
         route:'/BlogSingles',
     },
   ],
@@ -138,14 +138,17 @@ export const state = () => ({
     },
     {
         title:'Product Singles',
+        img:'https://www.flaticon.com/premium-icon/icons/svg/633/633317.svg',
         route:'/ProductSingles'
     },
     {
         title:'Layouts',
+        img:'https://www.flaticon.com/premium-icon/icons/svg/633/633317.svg',
         route:'/Layouts'
     },
     {
         title:'Pages',
+        img:'https://www.flaticon.com/premium-icon/icons/svg/633/633317.svg',
         route:'/Pages'
     },
   ],

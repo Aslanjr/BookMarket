@@ -23,10 +23,7 @@
                     </div>
                     <div class="form-row mt-2 d-flex align-items-center">
                         <div class="form-group col-sm-5">
-                            <button class="Button mr-2" @click="Create">Create</button>
-                            <nuxt-link to="/Auth/Login ">
-                                <span class="font-weight-bold">Log In</span>  
-                            </nuxt-link>
+                            <button class="Button" @click="Create">Create</button>
                         </div>
                     </div>
                 </form>

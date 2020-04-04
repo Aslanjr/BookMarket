@@ -9,12 +9,12 @@
 						</nuxt-link>
 					</div>
 					<div class="Header__item__menu d-flex align-items-center pl-5">
-							<div class="menu__item d-flex"  v-for="(item,index) in menuList" :key="index" @click="showDrop(item.title)">
-								{{item.title }}
-								<div class="pl-2">
-									<img src="/icons/down-arrow.png" height="10" />
-								</div>
+						<div class="menu__item d-flex"  v-for="(item,index) in menuList" :key="index" @click="showDrop(item.title)">
+							{{item.title }}
+							<div class="pl-2">
+								<img src="https://www.flaticon.com/premium-icon/icons/svg/633/633317.svg" height="10" />
 							</div>
+						</div>
 					</div>
 				</div>
 				<div class="Basket">
@@ -25,12 +25,12 @@
 				<transition name="switch">
 					<div class="Dropdown__item__home shadow-lg"  @click="showDrop('Home')" @mouseleave="closeDrop('Home')" v-if="HomeDrops">
 						<div v-for="(item,index) in HomeDrop" class="mt-2 drop_item"  :key="index">
-							{{item.title | upperCase}}
+							<nuxt-link :to="item.route">{{item.title | upperCase}}</nuxt-link>
 						</div>
 					</div>
 					<div class="Dropdown__item__pages shadow-lg"  @click="showDrop('Pages')" @mouseleave="closeDrop('Pages')" v-if="PagesDrops">
 						<div v-for="(item,index) in PagesDrop" class="mt-2 drop_item"  :key="index">
-							{{item.title | upperCase}}
+							<nuxt-link :to="item.route">{{item.title | upperCase}}</nuxt-link>
 						</div>
 					</div>
 					<div class="Dropdown__item__events shadow-lg"  @click="showDrop('Events')" @mouseleave="closeDrop('Events')" v-if="EventsDrops">
@@ -52,7 +52,7 @@
 					</div>
 					<div class="Dropdown__item__Shop shadow-lg"  @click="showDrop('Shop')" @mouseleave="closeDrop('Shop')" v-if="ShopDrops" >
 						<div v-for="(item,index) in ShopDrop" class="mt-2 drop_item  d-flex" @click="showItemDrop(item.title)"  :key="index">
-							{{item.title | upperCase}}
+							{{item.title | upperCase}} 
 						</div>
 						<transition name="switch">
 							<div class="Dropdown__item__ProductSingle shadow-lg" @mouseleave="closeItemDrop('Product Singles')"  v-if="ProductSinglesDrops">
@@ -225,6 +225,14 @@ import Basket from './Basket.vue'
 	};
 </script>
 <style scoped lang="scss">
+	a{
+		text-decoration: none;
+		color:#000;
+		transition:all .45s ease;
+	}
+	a:hover{
+		color:red;
+	}
 	.Header{
 		padding: 2% 5%;
 		color:#000;
@@ -284,28 +292,28 @@ import Basket from './Basket.vue'
 				padding: 2% 4% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:1%;
+				left:5%;
 			}
 			.Dropdown__item__pages{
 				background:#fff;
 				padding: 2% 4% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:5%;
+				left:10%;
 			}
 			.Dropdown__item__events{
 				background:#fff;
 				padding: 2% 5% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:7%;
+				left:15%;
 			}
 			.Dropdown__item__Blog{
 				background:#fff;
 				padding: 2% 1% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:10%;
+				left:22%;
 				.drop_item{
 					.rightArrow{
 						padding-left:60px;
@@ -321,7 +329,7 @@ import Basket from './Basket.vue'
 				padding: 2% 4% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:30%;
+				left:27%;
 			}
 			.Dropdown__item__BlogSingle{
 				background:#fff;
@@ -330,8 +338,9 @@ import Basket from './Basket.vue'
 				position: absolute;
 				text-align: left;
 				cursor: pointer;
-				left:257px;
-				top:100px;
+				left:100%;
+				top:50%;
+				
 			}
 			.Dropdown__item__ProductSingle{
 				background:#fff;
@@ -340,8 +349,8 @@ import Basket from './Basket.vue'
 				position: absolute;
 				text-align: left;
 				cursor: pointer;
-				left:278px;
-				top:60px;
+				left:100%;
+				top:20%;
 			}
 			.Dropdown__item__Layouts{
 				background:#fff;
@@ -350,8 +359,8 @@ import Basket from './Basket.vue'
 				position: absolute;
 				text-align: left;
 				cursor: pointer;
-				left:278px;
-				top:85px;
+				left:100%;
+				top:45%;
 			}
 			.Dropdown__item__PagesItems{
 				background:#fff;
@@ -360,8 +369,8 @@ import Basket from './Basket.vue'
 				position: absolute;
 				text-align: left;
 				cursor: pointer;
-				left:278px;
-				top:120px;
+				left:100%;
+				top:65%;
 			}
 		}
 		.Basket{

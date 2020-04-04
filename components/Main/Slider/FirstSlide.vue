@@ -5,10 +5,10 @@
                  <div class="container-fluid slider__controls">
                     <div class="row  d-flex justify-content-between">
                         <div class="slider__controls__Back">
-                            <img src="/icons/back (1).png" @click="prev" height="64" alt="">
+                            <img src="https://image.flaticon.com/icons/svg/860/860790.svg" @click="prev" height="64" alt="">
                         </div>
                         <div class="slider__controls__Next">
-                            <img src="/icons/next.png" @click="next" height="64" alt="">
+                            <img src="https://image.flaticon.com/icons/svg/318/318429.svg" @click="next" height="64" alt="">
                         </div>
                     </div>
                 </div>

@@ -1,23 +1,10 @@
-# flowers
+# MIDDLEWARE
 
-> Nuxt.js project
+This directory contains your Application Middleware.
+The middleware lets you define custom function to be ran before rendering a page or a group of pages (layouts).
 
-## Build Setup
+More information about the usage of this directory in the documentation:
+https://nuxtjs.org/guide/routing#middleware
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+**This directory is not required, you can delete it if you don't want to use it.**
 

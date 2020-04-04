@@ -121,6 +121,7 @@ export default {
             font-size: 25px;
         }
         .BackImage{
+            overflow: hidden;
             position: absolute;
             .BackImage__Item{
                 position:absolute;

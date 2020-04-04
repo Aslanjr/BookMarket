@@ -1,8 +1,8 @@
 <template>
     <div class="MyLink">
         <div class="container-fuild">
-            <div class="row justify-content-center d-flex">
-                <div class="col-sm-12 text-center">
+            <div class="row justify-content-center">
+                <div class="col-sm-11 text-center p-0">
                         <span>{{Link.Title}}</span>
                             <a :href="Link.link">
                                 <span>{{Link.Author}}</span>

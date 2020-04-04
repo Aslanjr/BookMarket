@@ -9,7 +9,7 @@
                     <div class="Title__content">
                         <div class="link">
                             <div class="addToBasket">
-                                <span>Add To Basket</span>
+                                <span @click="addToBasket(item)">Add To Basket</span>
                                 <span class="line"></span>
                             </div>
                         </div>
@@ -43,6 +43,11 @@ export default {
         // eslint-disable-next-line vue/return-in-computed-property
         showFantasy(){
             return this.Fantasy;
+        }
+    },
+    methods: {
+        addToBasket(item){
+            this.$store.dispatch('Basket/addBasket',item);
         }
     },
 

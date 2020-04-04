@@ -9,7 +9,7 @@
                     <div class="Title__content">
                         <div class="link">
                             <div class="addToBasket">
-                                <span>Add To Basket</span>
+                                <span @click="addToBasket(item)">Add To Basket</span>
                                 <span class="line"></span>
                             </div>
                         </div>
@@ -49,7 +49,11 @@ export default {
             return this.Fantasy;
         }
     },
-
+    methods: {
+        addToBasket(item){
+            this.$store.dispatch('Basket/addBasket',item);
+        }
+    },
 }
 </script>
 <style lang="scss" scoped>
