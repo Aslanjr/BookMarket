@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-row mt-2 d-flex align-items-center">
                         <div class="form-group col-sm-5">
-                            <button class="Button" @click="Login">Log In</button>
+                            <button class="Button">Log In</button>
                         </div>
                     </div>
                 </form>
@@ -39,14 +39,6 @@ export default {
         }
     },
     methods: {
-        LogIn(){
-            this.$auth.loginWith('local',{
-                data:{
-                    username:this.User.Login,
-                    userpassword:this.User.password
-                }
-            })
-        }
     },
     computed: {
         showLogin(){
