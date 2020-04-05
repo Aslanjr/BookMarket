@@ -1,6 +1,6 @@
 <template>
     <div class="AllBooks container-fluid">
-        <div class="row d-flex ml-5 justify-content-start">
+        <div class="row d-flex justify-content-center AllBooks__content">
             <div class="AllBooks__item" v-for="(item,index) in showBooks.slice(0,3)" :key="index">
                 <div class="AllBooks__item__content">
                     <div class="Images">
@@ -125,6 +125,20 @@ export default {
         }
         .addToBasket:hover .line{
             width: 100%;
+        }
+    }
+    .AllBooks__content{
+        @media screen and (max-width: 1840px) {
+            margin-left: 40px;
+        }
+        @media screen and (max-width: 1730px) {
+            margin-left: 30px;
+        }
+        @media screen and (max-width: 1056px) {
+            margin-left: 20px;
+        }
+         @media screen and(max-width:420px) {
+            margin-left: 0px;
         }
     }
 </style>
