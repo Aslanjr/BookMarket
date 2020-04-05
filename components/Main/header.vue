@@ -1,27 +1,28 @@
 <template>
 	<div>
 		<div class="Header container-fuild">
-			<div class="row align-items-center justify-content-between">
-				<div class="Header__item d-flex align-items-center">
-					<div class="Header__logo" >
+			<Menu class="Menu"/>
+			<div class="row Header__content align-items-center justify-content-between">
+				<div class="Header__item d-flex col-sm-8 align-items-center row">
+					<div class="Header__logo col-sm-2" >
 						<nuxt-link to="/">
 							<img src="https://chapterone.qodeinteractive.com/wp-content/uploads/2019/08/logo.png" height="64" alt="">
 						</nuxt-link>
 					</div>
-					<div class="Header__item__menu d-flex align-items-center pl-5">
-						<div class="menu__item d-flex"  v-for="(item,index) in menuList" :key="index" @click="showDrop(item.title)">
+					<div class="Header__item__menu d-flex align-items-center col-sm-10 row">
+						<div class="menu__item d-flex col-sm-2"  v-for="(item,index) in menuList" :key="index" @click="showDrop(item.title)">
 							{{item.title }}
-							<div class="pl-2">
+							<div class=" mr-2 col-sm-6">
 								<img src="https://www.flaticon.com/premium-icon/icons/svg/633/633317.svg" height="10" />
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="Basket">
+				<div class="Basket col-sm-4">
 					<Basket/>
 				</div>
 			</div>
-			<div class="Dropdown">
+			<div class="Dropdown Header__content">
 				<transition name="switch">
 					<div class="Dropdown__item__home shadow-lg"  @click="showDrop('Home')" @mouseleave="closeDrop('Home')" v-if="HomeDrops">
 						<div v-for="(item,index) in HomeDrop" class="mt-2 drop_item"  :key="index">
@@ -80,7 +81,7 @@
 <script>
 
 import Basket from './Basket.vue'
-
+import Menu from './Adaptive/HeaderMenu'
 	export default{
 		name:'Header',
 		data:()=>{
@@ -115,6 +116,7 @@ import Basket from './Basket.vue'
 		},
 		components:{
 			Basket,
+			Menu
 		},
 		methods:{
 			showDrop(value){
@@ -234,13 +236,13 @@ import Basket from './Basket.vue'
 		color:red;
 	}
 	.Header{
-		padding: 2% 5%;
 		color:#000;
+		margin:2% 3%;
 		font-family: 'Cormorant Garamond', serif;
 		.Header__item__menu{
 			font-size: 21px;
+			width: 100%;
 			.menu__item{
-				padding: 5% 3%;
 				transition:all .3s ease;
 				cursor: pointer;
 				height:100%;
@@ -285,7 +287,6 @@ import Basket from './Basket.vue'
 			font-size: 11px;
 			letter-spacing: .35em;
 			z-index: 140;
-			position: relative;
 			line-height: 18px;
 			.Dropdown__item__home{
 				background:#fff;
@@ -373,8 +374,17 @@ import Basket from './Basket.vue'
 				top:65%;
 			}
 		}
-		.Basket{
-			padding:0% 5%;
+		.Menu{
+			display: none;
+		}
+		@media screen and (max-width:1050px) {
+			.Header__content{
+				display: none;
+			}
+			.Menu{
+				display:flex;
+				width:100%;
+			}
 		}
 	}
 	

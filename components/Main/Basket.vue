@@ -1,69 +1,72 @@
 <template>
-    <div class="Basket d-flex">
-        <div class="Basket__item d-flex align-items-end" @mouseenter="showBasketItems">
-            <span class="BasketCount">{{$store.state.Basket.cartCount}}</span>
-            <img src="/Icons/add-to-cart.png" alt="">
-            <span class="totalPrice ml-2">${{$store.state.Basket.totalPrice}}.00</span>
-            <transition name="switch">
-                <div class="DropdownBasket shadow-lg" @mouseenter="showBasketItems" @mouseleave=" DropdownBasket = false" v-if="DropdownBasket">
-                    <div class="non__Content" v-if="ItemBasket">
-                        No products in the cart.
-                    </div>
-                    <div class="Basket__Content p-5" v-if="BasketContent">
-                        <div class="d-flex row mb-3 no-gutters align-items-center" v-for="(item,index) in showBasket" :key="index">
-                            <div class="col-sm-4 ">
-                                <img :src="item.Img" height="110"/>
+    <div class="Basket d-flex  ">
+        <div class="container-fluid">
+            <div class="row justify-content-end ">
+                <div class="Basket__item d-flex  justify-content-end col-sm-3  align-items-end" @mouseenter="showBasketItems">
+                    <span class="BasketCount">{{$store.state.Basket.cartCount}}</span>
+                    <img src="/Icons/add-to-cart.png" alt="">
+                    <span class="totalPrice ml-2">${{$store.state.Basket.totalPrice}}.00</span>
+                    <transition name="switch">
+                        <div class="DropdownBasket shadow-lg" @mouseenter="showBasketItems" @mouseleave=" DropdownBasket = false" v-if="DropdownBasket">
+                            <div class="non__Content" v-if="ItemBasket">
+                                No products in the cart.
                             </div>
-                            <div class="col-sm-4 ml-1">
-                                <p class="m-0">{{item.Title}}</p>
-                                <p>1 x {{item.Amount | Dollars}}</p>
+                            <div class="Basket__Content p-5" v-if="BasketContent">
+                                    <div class="d-flex row mb-3 no-gutters align-items-center" v-for="(item,index) in showBasket" :key="index">
+                                        <div class="col-sm-4 ">
+                                            <img :src="item.Img" height="110"/>
+                                        </div>
+                                        <div class="col-sm-4 ml-1">
+                                            <p class="m-0">{{item.Title}}</p>
+                                            <p>1 x {{item.Amount | Dollars}}</p>
+                                        </div>
+                                        <div class="col-sm-3 mb-5 text-right">
+                                            <img src="https://image.flaticon.com/icons/svg/748/748122.svg" height="16" @click="deleteItem(item)" class="close">
+                                        </div>
+                                    </div>
+                            <div class="d-flex justify-content-between">
+                                <p >Total:</p>
+                                <p>${{$store.state.Basket.totalPrice}}.00</p>
                             </div>
-                            <div class="col-sm-3 mb-5 text-right">
-                                <img src="https://image.flaticon.com/icons/svg/748/748122.svg" height="16" @click="deleteItem(item)" class="close">
+                            <button class="button buttonCart">View Cart</button>
+                            <button class="button buttonCheck">View Checkout</button>
                             </div>
                         </div>
-                    <div class="d-flex justify-content-between">
-                        <p >Total:</p>
-                        <p>${{$store.state.Basket.totalPrice}}.00</p>
-                    </div>
-                    <button class="button buttonCart">View Cart</button>
-                    <button class="button buttonCheck">View Checkout</button>
-                    </div>
+                    </transition>
                 </div>
-            </transition>
-        </div>
-        <div class="Basket__item">
-           <div>
-               <img src="/Icons/search.png" @click=" DropdownSearch = true">
-           </div>
-           <transition name="switch">
-                <div class="DropdownSearch" v-if="DropdownSearch" @mouseleave="DropdownSearch = false">
-                    <input type="text" v-model="search" placeholder="Search"> <p @click="Search">GO</p>
+                <div class="Basket__item col-sm-2 pr-0 text-center">
+                <div>
+                    <img src="/Icons/search.png" @click=" DropdownSearch = true">
                 </div>
-           </transition>
-        </div>
-        <div class="Basket__item" @mouseenter="LogIn = true" >
-            <div>
-               <img src="/Icons/user.png" alt="">
-           </div>
-           <transition name="switch">
-        
-            <div class="Log row d-flex flex-wrap  shadow-lg justify-content-center" @mouseenter="LogIn = true" @mouseleave="LogIn = false" v-if="LogIn">   
-                    <div class="Login col-sm-12 ">
-                        <img src="/Icons/login.png" alt="">
-                        <nuxt-link to="/Auth/Login">
-                            <span>Log In</span>
-                        </nuxt-link>
+                <transition name="switch">
+                        <div class="DropdownSearch" v-if="DropdownSearch" @mouseleave="DropdownSearch = false">
+                            <input type="text" v-model="search" placeholder="Search"> <p @click="Search">GO</p>
+                        </div>
+                </transition>
+                </div>
+                <div class="Basket__item col-sm-2 text-center" @mouseenter="LogIn = true" >
+                    <div>
+                    <img src="/Icons/user.png" alt="">
+                </div>
+                <transition name="switch">
+                    <div class="Log row d-flex flex-wrap  shadow-lg justify-content-center" @mouseenter="LogIn = true" @mouseleave="LogIn = false" v-if="LogIn" >   
+                            <div class="Login col-sm-12 ">
+                                <img src="/Icons/login.png" alt="">
+                                <nuxt-link to="/Auth/Login">
+                                    <span>Log In</span>
+                                </nuxt-link>
+                            </div>
+                        
+                            <div class="Sign col-sm-12">
+                                <img src="/Icons/login.png" alt="">
+                                <nuxt-link to="/Auth/Registration">
+                                    <span>Sign In</span>
+                                </nuxt-link>
+                            </div>
                     </div>
-                
-                    <div class="Sign col-sm-12">
-                        <img src="/Icons/login.png" alt="">
-                         <nuxt-link to="/Auth/Registration">
-                            <span>Sign In</span>
-                         </nuxt-link>
-                    </div>
+                </transition>
+                </div>
             </div>
-           </transition>
         </div>
     </div>
 </template>
@@ -124,29 +127,29 @@ export default {
 <style lang="scss" scoped>
     .Basket{
         font-family: 'Cormorant Garamond', serif;
-        padding:0% 30%;
         z-index: 140;
         .Basket__item{
             cursor: pointer;
-            margin: 0% 7%;
-            padding:0% 10% 0% 0%;
+            padding:0% 3% 0% 0%;
             .Log{
                 position: absolute;
-                top:120px;
-                left:87%;
+                top:80px;
+                left:-100px;
                 background:#fff;
-                padding: 30px 0px;
                 font-size: 20px;
+                padding: 10% 3%;
                 a{
                     color: #000;
                     text-decoration: none;
                 }
                 .Login{
                     transition: all .5s ease;
+                    text-align: left;
                 }
                 .Sign{
                     transition: all .5s ease;
                     margin:10px 0px;
+                    text-align: left;
                 }
                 .Sign:hover{
                     transform: translateX(5px);
@@ -187,8 +190,8 @@ export default {
             width: 400px;
             position: absolute;
             cursor: pointer;
-            top:100px;
-            right:10%;
+            top:80px;
+            right:1px;
             font-size: 18px;
             .non__Content{
                 width: 100%;
@@ -205,12 +208,12 @@ export default {
         .DropdownSearch{
             background:#282828;
             font-family:"Josefin Sans", sans-serif;
-            padding: 1% 2% 1% 2%;
+            padding: 20px 50px;
             display: flex;
             position:absolute;
             cursor: pointer;
-            top:100px;
-            right:8%;
+            top:80px;
+            right:5px;
             font-size: 18px;
             color:#fff;
             input{

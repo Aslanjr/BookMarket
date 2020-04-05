@@ -1,10 +1,10 @@
 <template>
     <div class="Main">
         <Headers/>
-        <About/>   
-        <Story/>
+        <OurEvent/>   
+        <Events/>   
+        <BooksClub/>
         <ParisTour/>
-        <Events/>     
         <ClientLinks/>
         <Footer/> 
         <MyLinks/>
@@ -17,9 +17,10 @@ import Footer       from '~/components/Main/footer.vue'
 import Events       from '~/components/Main/Events/BookPromotion.vue'
 import ClientLinks  from '~/components/Main/ClientsLinks.vue'
 import MyLinks      from '~/components/Main/MyLink.vue'
-import About        from '~/components/Main/ContentHead/AboutMe.vue'
-import Story        from '~/components/Main/ShortStory.vue'
+import OurEvent     from '~/components/Main/Events/OurEvent.vue'
 import ParisTour    from '~/components/Main/Events/ParisTour.vue'
+import BooksClub    from '~/components/Main/Books/BooksClub.vue'
+
 
 export default {
     name:'AboutMe',
@@ -34,9 +35,9 @@ export default {
         Events,     
         ClientLinks,
         MyLinks,
-        Story,
-        About,
-        ParisTour    
+        OurEvent,
+        ParisTour,
+        BooksClub    
     }
 }
 </script>
