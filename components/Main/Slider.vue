@@ -84,7 +84,17 @@ export default {
         z-index: 101;
         position:absolute;
         left:45%;
-        top:75%;
+        top:750px;
+        @media screen and (max-width:1616px){
+            top:670px;
+        }
+        @media screen and (max-width:576px){
+            top:705px;
+            left:36.3%;
+        }
+        @media screen and (max-width:400px){
+            left:30%;
+        }
         
     }
     .Slider__progress__items{

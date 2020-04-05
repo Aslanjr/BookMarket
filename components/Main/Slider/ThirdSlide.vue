@@ -80,6 +80,9 @@ export default {
         position: relative;
         background:url('https://chapterone.qodeinteractive.com/wp-content/uploads/2019/08/home-2-slide-2-image-1a.jpg')no-repeat;
         background-size: cover;
+        @media screen and(max-height:1036px){
+            background-position-x: 50%;
+        }
         // #D9D0C1
     }
     .slider__content:nth-child(1){
@@ -88,6 +91,9 @@ export default {
         left:30%;
         z-index: 120;
         animation:Anime3 2s ease;
+        @media screen and(max-width:368px) {
+            display:none
+        }
     }
     
     .slider__content:nth-child(2){
@@ -104,6 +110,9 @@ export default {
             text-align: center;
             letter-spacing: .35em;
         }
+        @media screen and(max-width:368px) {
+           top:15%;
+        }
     }
     .slider__controls{
         margin:0;
@@ -117,6 +126,9 @@ export default {
         .slider__controls__Next{
             transition: all .65s ease;
             cursor: pointer;
+        }
+        @media screen and(max-width:738px) {
+            display:none
         }
     }
     .slider__content-title:nth-child(1){

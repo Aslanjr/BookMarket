@@ -8,7 +8,7 @@
     <Authors/>
     <GuestHost/>
     <Travelogue/>
-    <Gallery/>
+    <Gallery class="gallery" />
     <BookPromotion/>
     <ClientsLinks/>
     <Footer/>
@@ -71,6 +71,11 @@ export default {
   }
   .Slider{
     z-index:1;
+  }
+  .gallery{
+    @media screen and(max-width:580px) {
+      display:none;
+    }
   }
 </style>
 

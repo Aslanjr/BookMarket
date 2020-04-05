@@ -295,6 +295,7 @@ export default {
             }
         @media screen and (max-width:754px){
             width:110%;
+            top:30px;
         }
         }
         @media screen and(max-width:576px) {

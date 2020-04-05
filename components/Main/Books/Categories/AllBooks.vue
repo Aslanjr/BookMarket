@@ -1,6 +1,6 @@
 <template>
     <div class="AllBooks container-fluid">
-        <div class="row d-flex ml-5 justify-content-end">
+        <div class="row d-flex ml-5 justify-content-start">
             <div class="AllBooks__item" v-for="(item,index) in showBooks.slice(0,10)" :key="index">
                 <div class="AllBooks__item__content" >
                     <div class="Images">

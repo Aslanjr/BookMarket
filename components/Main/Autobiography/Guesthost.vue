@@ -10,7 +10,7 @@
                     </p>
                     <button class='button'>Read More</button>
                 </div>
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-6 col-sm-6 GuestHost__item__images">
                     <div class="Images">
                         <div class="Images__item">
                             <img src="https://chapterone.qodeinteractive.com/wp-content/uploads/2019/07/home-2-rev-2-img-7.png" alt="">
@@ -61,9 +61,11 @@ export default {
         font-family: $font;
         .GuestHost__item{
             padding:10% 10%;
-            
             width:100%;
             background:#FAF9F5;
+            @media screen and(max-width:665px){
+                overflow: hidden;
+            }
         }
            
     }
@@ -110,7 +112,15 @@ export default {
             top:130%;
             left:-40%;
             animation: AnimeUp 1s ease;
-            
+            @media screen and(max-width: 1700px) {
+                top:90%;
+                transform: scale(.7);
+            }
+            @media screen and(max-width:865px){
+                top:70%;
+                left:-30%;
+                transform: scale(.5);
+            }
             //coffe
         }   
         .Images__item:nth-child(2){
@@ -118,9 +128,19 @@ export default {
             left:1%;
             z-index: 5;
             animation: AnimeDown 1s ease;
-            @media screen and(max-width:1600px) {
+            @media screen and(max-width:1700px) {
                 transform: scale(.8);
             }
+            @media screen and(max-width: 1330px) {
+                top:-70%;
+                transform: scale(.7);
+            }
+            @media screen and(max-width:865px){
+                top:-50%;
+                left:-20%;
+                transform: scale(.5);
+            }
+            
             //башня
         }
         .Images__item:nth-child(3){
@@ -128,8 +148,19 @@ export default {
             left:20%;
             z-index: 10;
             animation: AnimeUp 1s ease;
-            @media screen and(max-width:1600px) {
+            @media screen and(max-width:1700px) {
+                top:-10%;
                 transform: scale(.8);
+            }
+            @media screen and(max-width: 1330px) {
+                top:-30%;
+                left:15%;
+                transform: scale(.65);
+            }
+            @media screen and(max-width:865px){
+                top:-30%;
+                left:-10%;
+                transform: scale(.5);
             }
             //бабка
         }
@@ -137,18 +168,51 @@ export default {
             top:-30%;
             left:50%;
             animation: AnimeLeft 1s ease;
+            @media screen and(max-width: 1700px) {
+                transform: scale(.8);
+                top:-60%;
+                left:40%;
+            }
+            @media screen and(max-width:865px){
+                top:-40%;
+                left:30%;
+                transform: scale(.5);
+            }
             //лужа
         }
         .Images__item:nth-child(5){
             top:-30%;
             left:75%;
             animation: AnimeLeft 1s ease;
+            @media screen and(max-width: 1700px) {
+                transform: scale(.8);
+            }
+            @media screen and(max-width:865px){
+                top:-15%;
+                left:65%;
+                transform: scale(.5);
+            }
             //надпись
         }
         .Images__item:nth-child(6){
             top:-90%;
             left:-25%;
             animation: AnimeDown 1s ease;
+            @media screen and(max-width: 1700px) {
+                transform: scale(.8);
+                top:-95%;
+                left:-20%;
+            }
+            @media screen and(max-width: 1330px) {
+                top:-70%;
+                left:-30%;
+                transform: scale(.7);
+            }
+            @media screen and(max-width:865px){
+                top:-50%;
+                left:-40%;
+                transform: scale(.5);
+            }
             //точки
         }
     }

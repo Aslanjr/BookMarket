@@ -8,24 +8,24 @@
                 <div class="slider__content">
                     <img src="https://chapterone.qodeinteractive.com/wp-content/uploads/2019/08/home-2-slide-3-image-1b.jpg" alt="">
                 </div>
-                <div class="slider__content col-sm-6 col-md-6" v-show="true" >
+                <div class="slider__content col-sm-12 col-md-12" v-show="true" >
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-12 slider__content-title text-left">
+                            <div class="col-sm-12 slider__content__title ">
                                 <h6 class="font-weight-bolder text-secondary slider__title pl-1">{{title | upper}}</h6>
                             </div>   
-                            <div class="col-sm-12 slider__content-title text-left">
+                            <div class="col-sm-12 slider__content__title ">
                                 <h1 class="slider__text">
                                     The all-time classics
                                 </h1>
                             </div>
-                            <div class="col-sm-12  slider__content-title text-left">
+                            <div class="col-sm-12  slider__content__title ">
                                 <p>
                                     Lorem ipsum dolor, sit amet consectetur adipisicing elit <br>  saepe fugiat aliquid placeat   consequatur,
                                     minima
                                 </p>
                             </div>
-                            <div class="col-sm-12  slider__content-title text-start">
+                            <div class="col-sm-12  slider__content__title ">
                                 <button class="btn btn-danger btn-lg button">Read More</button>
                             </div>
                         </div>
@@ -89,12 +89,21 @@ export default {
         left:35%;
         z-index: 120;
         animation:Anime3 2s ease;
+        @media screen and (max-width:1060px){
+           display: none;  
+        } 
     }
     .slider__content:nth-child(2){
         position: absolute;
         top:15%;
         left:8%;
         animation:Anime3 2s ease;
+        @media screen and(max-width:1320px) {
+            left:-3%;
+        }
+        @media screen and(max-width:1060px) {
+            display:none;
+        }
     }
     .slider__content:nth-child(3){
         font-size: 23px;
@@ -110,6 +119,21 @@ export default {
             opacity:.6;
             letter-spacing: .35em;
         }
+        @media screen and(max-width:1320px) {
+            top:25%;
+        }
+        .slider__content__title{
+            justify-content: center;
+            @media screen and (max-width:1060px){
+                text-align: center;  
+            } 
+        }
+        @media screen and (max-width:1060px){
+            left:0%;  
+        } 
+        @media screen and (max-width:500px){
+            top:15% ; 
+        } 
     }
     .slider__controls{
         margin:0;
@@ -126,6 +150,10 @@ export default {
             transform:rotate(180deg);
             cursor: pointer;
         }
+        @media screen and (max-width:704px){
+           display: none;  
+        } 
+        
     }
     
     .slider__content-title:nth-child(1){

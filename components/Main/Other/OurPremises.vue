@@ -22,7 +22,7 @@ export default {
 @import "../../../assets/_variables.scss";    
     .OurPremises{
         width: 70%;
-        padding: 7% 0%;
+        padding: $pad;
         font-family: $font;
         margin:0% 15%;
         display: flex;

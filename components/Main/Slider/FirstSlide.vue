@@ -15,21 +15,21 @@
                 <div class="slider__content col-sm-12 col-md-12" v-show="true" >
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-12 slider__content-title text-left">
+                            <div class="col-sm-12 slider__content__title ">
                                 <h5 class="font-weight-bolder text-secondary slider__title pl-1">It's Chapterone</h5>
                             </div>   
-                            <div class="col-sm-12 slider__content-title text-left">
+                            <div class="col-sm-12 slider__content__title ">
                                 <h1 class="slider__text">
                                     We Love Litarature
                                 </h1>
                             </div>
-                            <div class="col-sm-12  slider__content-title text-left">
+                            <div class="col-sm-12  slider__content__title ">
                                 <p>
                                     Lorem ipsum dolor, sit amet consectetur adipisicing elit <br>  saepe fugiat aliquid placeat   consequatur,
                                     minima
                                 </p>
                             </div>
-                            <div class="col-sm-12  slider__content-title text-start">
+                            <div class="col-sm-12  slider__content__title ">
                                 <button class="btn btn-danger btn-lg button">Read More</button>
                             </div>
                         </div>
@@ -99,6 +99,20 @@ export default {
             opacity:.6;
             letter-spacing: .35em;
         }
+        .slider__content__title{
+            justify-content: center;
+            @media screen and (max-width:1040px){
+                text-align: center;   
+            }   
+        }
+        @media screen and (max-width:1320px){
+            left:7%;
+        }
+        @media screen and (max-width:500px){
+            left:5%;
+            top:80px;
+        }
+        
     }
     .slider__content:nth-child(2){
         display: flex;
@@ -117,6 +131,9 @@ export default {
             transition: all .65s ease;
             cursor: pointer;
         }
+        @media screen and (max-width:1040px){
+            display:none;
+        }
     }
     
     
@@ -125,25 +142,70 @@ export default {
         top:20%;
         left:50%;
         position: absolute;
+        @media screen and (max-width:1706px){
+           transform: scale(0.8);
+        }
+        @media screen and (max-width:1040px){
+            top:50%;
+            left:10%;
+            transform: scale(0.6);
+        }
     }
     .slider__content__item:nth-child(2){
         animation:Anime2 1.8s ease;
         position: absolute;
+        z-index: 60;
         top:10%;
         transition:all 1s ease;
         right:-5%;
+        @media screen and (max-width:1706px){
+            right:-20%;
+            transform: scale(0.9);
+        }
+        @media screen and (max-width:1206px){
+            right:-36%;
+        }
+        @media screen and (max-width:1040px){
+            display:none;
+        }
+        
     }
     .slider__content__item:nth-child(3){
         animation:Anime1 1.8s ease;
         top:45%;
         left:87%;
         position: absolute;
+        @media screen and (max-width:1706px){
+            left:90%;
+            transform: scale(0.6);
+        }
+        @media screen and (max-width:1040px){
+            top:60%;
+            left:70%;
+            transform: scale(0.8);
+        }
+        @media screen and (max-width:626px){
+            display:none;
+        }
+        
+        
         
     }.slider__content__item:nth-child(4){
         animation:Anime3 3.5s ease;
         top:20%;
+        z-index: 70;
         left:81%;
         position: absolute;
+        @media screen and (max-width:1706px){
+            left:90%;
+            transform: scale(.89);
+        }
+        @media screen and (max-width:1206px){
+            left:88%;
+        }
+        @media screen and (max-width:1040px){
+            display:none;
+        }
     }
     .slider__content-title:nth-child(1){
         animation:Anime1 .6s ease;

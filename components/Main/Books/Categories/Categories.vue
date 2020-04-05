@@ -1,13 +1,10 @@
 <template>
-    <div id="Categories">
-        <div class="container">
-            <div class="row justify-content-center Categories">
-                <div class="col-sm-12  d-flex text-center">
-                    <li v-for="(item,index) in CategoriesList" @click="showBook(item.id)" class="button" :key="index">
+    <div class="Categories">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-2 d-flex button text-center justify-content-center align-items-center" v-for="(item,index) in CategoriesList" @click="showBook(item.id)" :key="index" >
                         {{item.title}}
-                    </li>
                 </div>  
-
             </div>
         </div>
     </div>
@@ -76,18 +73,17 @@ export default {
 </script>
 <style lang="scss" scoped>
     .Categories{
-        margin:3% 8%;
+        padding:4% 20% 2% 20%;
     }
     .button{
         cursor:pointer;
         list-style: none;
-        padding: 10px 40px;
+        padding: 10px 0px;
         font-family: 'Cormorant Garamond', serif;
         background:#fff;
         color:#000;
         font-size: 19px;
         transition:all .65s ease;
-        margin: 0px 5px;
         outline: 1px solid rgb(212,212,212);
     }
     .button:hover{
