@@ -10,10 +10,10 @@
 </template>
 <script>
 
-import Headers      from '~/components/Main/header.vue'
-import Footer       from '~/components/Main/footer.vue'
-import ClientLinks  from '~/components/Main/ClientsLinks.vue'
-import MyLinks      from '~/components/Main/MyLink.vue'
+import Headers      from '../../components/Main/header.vue'
+import Footer       from '../../components/Main/footer.vue'
+import ClientLinks  from '../../components/Main/ClientsLinks.vue'
+import MyLinks      from '../../components/Main/MyLink.vue'
 import Premises     from '../../components/Main/Other/OurPremises'
 import HeadPremises from '../../components/Main/ContentHead/HeadPremises'
 
