@@ -2,15 +2,15 @@
     <div class="BooksClub shadow-lg">
         <div class="container-fluid">
             <div class="row d-flex ">
-                <div class="col-sm-6 d-flex align-items-center justify-content-around text-center">
-                    <img src="https://media.istockphoto.com/vectors/man-and-woman-read-book-vector-id1051690092?k=6&m=1051690092&s=170667a&w=0&h=EABgnVYAgVxKA1IpkcCaND53Cnt2rM6MRm_lPYH_vVs=" alt="">
+                <div class="col-lg-6 Club d-flex align-items-center justify-content-around text-center">
+                    <img class="Club__img" src="https://media.istockphoto.com/vectors/man-and-woman-read-book-vector-id1051690092?k=6&m=1051690092&s=170667a&w=0&h=EABgnVYAgVxKA1IpkcCaND53Cnt2rM6MRm_lPYH_vVs=" alt="">
                     <h1 >Join the Books club here</h1>
                 </div>
-                <div class="col-sm-6 d-flex justify-content-around align-items-center">
-                    <div >
+                <div class="col-lg-6 Club d-flex justify-content-around align-items-center">
+                    <div>
                         <button class="Button">Join</button>
                     </div>
-                    <img src="https://image.freepik.com/vector-gratis/nina-sentada-leyendo-libro_101980-3.jpg" height="400" alt="">
+                    <img src="https://image.freepik.com/vector-gratis/nina-sentada-leyendo-libro_101980-3.jpg" class="Club__img" height="400" alt="">
                 </div>
             </div>
         </div>
@@ -47,9 +47,22 @@ export default {
         border:none;
         color:#000;
         outline: 1px solid #000;
+        @media screen and(max-width:660px){
+            margin:10% 5%;
+        }
     }
     .Button:hover{
         background:#000;
         color:#fff;
+    }
+    .Club{
+        @media screen and(max-width:660px){
+            flex-direction: column;
+        }
+    }
+    .Club__img{
+        @media screen and(max-width:660px){
+            transform: scale(.80);
+        }
     }
 </style>
