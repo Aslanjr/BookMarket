@@ -23,7 +23,7 @@ import slider         from '../components/Main/Slider.vue'
 import books          from '../components/Main/Books/Books.vue'
 import OurService     from '../components/Main/OurService.vue'
 import Authors        from '../components/Main/Authors.vue'
-import GuestHost      from '../components/Main/Autobiography/Guesthost.vue'
+import GuestHost      from '../components/Main/Autobiography/GuestHost.vue'
 import Travelogue     from '../components/Main/Autobiography/Travelogue.vue'
 import Gallery        from '../components/Main/gallery.vue'
 import BookPromotion  from '../components/Main/Events/BookPromotion.vue'
@@ -77,5 +77,6 @@ export default {
       display:none;
     }
   }
+  
 </style>
 

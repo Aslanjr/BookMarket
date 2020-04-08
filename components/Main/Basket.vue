@@ -133,7 +133,7 @@ export default {
             padding:0% 3% 0% 0%;
             .Log{
                 position: absolute;
-                top:80px;
+                top:50px;
                 left:-100px;
                 background:#fff;
                 font-size: 20px;
@@ -190,7 +190,7 @@ export default {
             width: 400px;
             position: absolute;
             cursor: pointer;
-            top:80px;
+            top:55px;
             right:1px;
             font-size: 18px;
             .non__Content{
@@ -212,7 +212,7 @@ export default {
             display: flex;
             position:absolute;
             cursor: pointer;
-            top:80px;
+            top:55px;
             right:5px;
             font-size: 18px;
             color:#fff;

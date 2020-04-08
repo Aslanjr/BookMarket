@@ -293,28 +293,32 @@ import Menu from './Adaptive/HeaderMenu'
 				padding: 2% 4% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:5%;
+				z-index:100;
+				left:10%;
 			}
 			.Dropdown__item__pages{
 				background:#fff;
 				padding: 2% 4% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:10%;
+				z-index:101;
+				left:17%;
 			}
 			.Dropdown__item__events{
 				background:#fff;
 				padding: 2% 5% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:15%;
+				z-index:102;
+				left:27%;
 			}
 			.Dropdown__item__Blog{
 				background:#fff;
 				padding: 2% 1% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:22%;
+				z-index:103;
+				left:36%;
 				.drop_item{
 					.rightArrow{
 						padding-left:60px;
@@ -330,7 +334,8 @@ import Menu from './Adaptive/HeaderMenu'
 				padding: 2% 4% 2% 2%;
 				position:absolute;
 				cursor: pointer;
-				left:27%;
+				z-index:104;
+				left:45%;
 			}
 			.Dropdown__item__BlogSingle{
 				background:#fff;

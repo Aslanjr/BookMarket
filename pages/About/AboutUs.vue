@@ -1,8 +1,10 @@
 <template>
     <div class="Main">
-        <Headers/>  
-        <HeadPremises/>
-        <Premises/>
+        <Headers/>
+        <BookSections/>
+        <History/>
+        <Coffee/>
+        <Products/>
         <ClientLinks/>
         <Footer/> 
         <MyLinks/>
@@ -14,8 +16,10 @@ import Headers      from '../../components/Main/header.vue'
 import Footer       from '../../components/Main/footer.vue'
 import ClientLinks  from '../../components/Main/ClientsLinks.vue'
 import MyLinks      from '../../components/Main/MyLink.vue'
-import Premises     from '../../components/Main/Other/OurPremises.vue'
-import HeadPremises from '../../components/Main/ContentHead/HeadPremises.vue'
+import History      from '../../components/Main/Autobiography/History.vue'
+import Coffee       from '../../components/Main/Autobiography/Coffee.vue'
+import BookSections from '../../components/Main/Books/BooksSections.vue'
+import Products     from '../../components/Main/Other/PromoProducts'
 
 export default {
     name:'AboutMe',
@@ -29,8 +33,10 @@ export default {
         Footer,     
         ClientLinks,
         MyLinks,
-        Premises,
-        HeadPremises
+        History,
+        Coffee,
+        BookSections,
+        Products
     }
 }
 </script>

@@ -11,10 +11,10 @@
                             <img src="https://chapterone.qodeinteractive.com/wp-content/uploads/2019/07/home-2-rev-3-image-4.png" alt="">
                         </div>
                         <div class="Images__item">
-                            <img src="https://chapterone.qodeinteractive.com/wp-content/uploads/2019/07/home-2-rev-3-img-6.jpg" alt="">
+                            <img src="https://chapterone.qodeinteractive.com/wp-content/uploads/2019/08/about-us-rev-2-image-1.jpg" alt="">
                         </div>
                         <div class="Images__item">
-                            <img src="https://chapterone.qodeinteractive.com/wp-content/uploads/2019/07/home-2-rev-3-img-5.jpg" alt="">
+                            <img src="https://chapterone.qodeinteractive.com/wp-content/uploads/2019/08/about-us-rev-2-image-2.jpg" alt="">
                         </div>
                         <div class="Images__item">
                             <img src="https://chapterone.qodeinteractive.com/wp-content/uploads/2019/07/home-2-rev-3-image-2.png" alt="">

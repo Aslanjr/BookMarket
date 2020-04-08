@@ -41,15 +41,15 @@ export const state = () => ({
     },
     {
         title:'Our Events',
-        route:'/OurEvents'
+        route:'/Our/OurEvents'
     },
     {
         title:'Our Premises',
-        route:'/OurPremises'
+        route:'/Our/OurPremises'
     },
     {
         title:'Comming Soon',
-        route:'/CommingSoon'
+        route:'/ComingSoon'
     },
     {
         title:'Order Page',
