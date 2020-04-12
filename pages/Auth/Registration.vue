@@ -12,7 +12,7 @@ import Header       from '../../components/Main/header.vue'
 import Registration from '../../components/Main/Auth/Registration.vue'
 import Footer       from '../../components/Main/footer.vue'
 import MyLink       from '../../components/Main/MyLink.vue'
-import CLientLinks  from '../../components/Main/ClientsLinks.vue'
+import CLientLinks  from '../../components/Main/Links/ClientsLinks.vue'
 
 export default {
     name:'Log',

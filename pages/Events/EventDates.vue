@@ -1,11 +1,8 @@
 <template>
     <div class="Main">
         <Headers/>
-        <About/>   
-        <Story/>
-        <ParisTour/>
-        <Events/>     
-        <ClientLinks/>
+        <EventsPage/>
+        <EventDate/>
         <Footer/> 
         <MyLinks/>
     </div>
@@ -14,12 +11,10 @@
 
 import Headers      from '../../components/Main/header.vue'
 import Footer       from '../../components/Main/footer.vue'
-import Events       from '../../components/Main/Events/BookPromotion.vue'
-import ClientLinks  from '../../components/Main/Links/ClientsLinks.vue'
 import MyLinks      from '../../components/Main/MyLink.vue'
-import About        from '../../components/Main/ContentHead/AboutMe.vue'
-import Story        from '../../components/Main/ShortStory.vue'
-import ParisTour    from '../../components/Main/Events/ParisTour.vue'
+import EventsPage   from '../../components/Main/ContentHead/EventDates'
+import EventDate    from '../../components/Main/Events/BookPromotion'
+
 
 export default {
     name:'AboutMe',
@@ -31,12 +26,9 @@ export default {
     components:{
         Headers,     
         Footer,     
-        Events,     
-        ClientLinks,
         MyLinks,
-        Story,
-        About,
-        ParisTour    
+        EventDate,
+        EventsPage
     }
 }
 </script>

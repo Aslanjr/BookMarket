@@ -12,7 +12,7 @@
 
 import Headers      from '../../components/Main/header.vue'
 import Footer       from '../../components/Main/footer.vue'
-import ClientLinks  from '../../components/Main/ClientsLinks.vue'
+import ClientLinks  from '../../components/Main/Links/ClientsLinks.vue'
 import MyLinks      from '../../components/Main/MyLink.vue'
 import Premises     from '../../components/Main/Other/OurPremises.vue'
 import HeadPremises from '../../components/Main/ContentHead/HeadPremises.vue'

@@ -88,6 +88,7 @@ export default {
     }
     .slider__content:nth-child(2){
         font-size: 23px;
+        animation: Anime2 1.5s ease;
         position: absolute;
         top:30%;
         left:1%;
@@ -114,6 +115,7 @@ export default {
         }
         
     }
+    
     .slider__content:nth-child(2){
         display: flex;
         

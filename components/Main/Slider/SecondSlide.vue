@@ -107,6 +107,7 @@ export default {
     }
     .slider__content:nth-child(3){
         font-size: 23px;
+        animation: Anime2 2s ease;
         position: absolute;
         top:30%;
         left:50%;
@@ -160,13 +161,13 @@ export default {
         animation:Anime1 .6s ease;
     }
     .slider__content-title:nth-child(2){
-        animation:Anime1 1s ease;
+        animation:Anime2 1s ease;
     }
     .slider__content-title:nth-child(3){
-        animation:Anime1 1.4s ease;
+        animation:Anime3 1.4s ease;
     }
     .slider__content-title:nth-child(4){
-        animation:Anime1 1.8s ease;
+        animation:Anime2 1.8s ease;
         button{
             
             cursor:pointer !important;

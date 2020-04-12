@@ -1,9 +1,28 @@
 @mixin button($bg,$color,$outline) {
-    margin:5px 0px;
-    padding: 10px 0px;
+    margin:5px 2px;
+    padding: 10px 20px;
     border:none;
     cursor: pointer;
     background:$bg;
     color:$color;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: .05em;
+    font-size: 17px;
     outline: $outline;
+    transition:all .65s ease;
+    &:hover {
+        background:$color;
+        color:$bg;
+    }
+    &:focus {
+        background:$color;
+        color:$bg;
+    }
+}
+@mixin text($color,$size,$space,$bold) {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: $bold;
+    color:$color;
+    font-size: $size;
+    letter-spacing: $space;
 }

@@ -5,9 +5,7 @@
                 <div class="col-sm-12 text-center Story__title">
                     <p class="Story__Head text-secondary">My Short Story</p>
                     <p class="Story__text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde porro veritatis natus placeat cupiditate,<br> 
-                        assumenda nihil tempore voluptas maiores architecto aliquam est facere temporibus ducimus eos,<br>
-                        praesentium asperiores mollitia quod.
+                        Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut <br> labore et dolore magna aliqua. Ut enim ad minim.
                     </p>
                     <button class="Button">Read More</button>
                 </div>
@@ -30,7 +28,7 @@ export default {
 @import '~/assets/_variables.scss';
     .Story{
         width:100%;
-        padding:6% 0%;
+        padding:6% 20%;
     }
     .Story__title{
         font-family: $font;

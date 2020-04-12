@@ -7,7 +7,7 @@ export const state = () => ({
     },
     {
         title:'Restselling Author',
-        route:'/Authors'
+        route:'/Author'
     },
     {
         title:'Audiobook Home',
@@ -53,19 +53,19 @@ export const state = () => ({
     },
     {
         title:'Order Page',
-        route:'/OrderPage'
+        route:'/MainPages/OrderPage'
     },
     {
         title:'Contact Us',
-        route:'/ContactUs'
+        route:'/MainPages/ContactUs'
     },
     {
         title:'Pricing Options',
-        route:'/Pricing'
+        route:'/MainPages/PricingOptions'
     },
     {
         title:'FAQ Page',
-        route:'/FAQ'
+        route:'/MainPages/FAQPage'
     },
     {
         title:'404 Error Page',

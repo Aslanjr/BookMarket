@@ -27,7 +27,7 @@ import GuestHost      from '../components/Main/Autobiography/Guesthost.vue'
 import Travelogue     from '../components/Main/Autobiography/Travelogue.vue'
 import Gallery        from '../components/Main/gallery.vue'
 import BookPromotion  from '../components/Main/Events/BookPromotion.vue'
-import ClientsLinks   from '../components/Main/ClientsLinks.vue'
+import ClientsLinks   from '../components/Main/Links/ClientsLinks.vue'
 import MyLink         from '../components/Main/MyLink.vue'
 import Footer         from '../components/Main/footer.vue'
 
